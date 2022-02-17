@@ -11,8 +11,10 @@ import "decimal"
 
 # Monthly Limits
 limits = {
-  "dev": decimal.new(200),
-  "staging": decimal.new(200),
+  "dev": decimal.new(5),
+  "devlop": decimal.new(5),
+  "devlopment": decimal.new(5),
+  "staging": decimal.new(50),
   "qa": decimal.new(500),
   "prod": decimal.new(1000),
 }
