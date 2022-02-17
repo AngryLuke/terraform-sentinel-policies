@@ -1,4 +1,4 @@
-#The policy uses the tfplan import to enforce the usage of Terraform version 1.1.0 or higher
+#The policy uses the tfplan import to enforce the usage of Terraform version 1.1.0 (Dec 08, 2021) or higher
 
 import "tfplan/v2" as tfplan
 
