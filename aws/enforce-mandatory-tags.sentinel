@@ -20,7 +20,7 @@ param resource_types default [
   "aws_route_table",
   "aws_nat_gateway",
   "aws_internet_gateway",
-  "aws_eip"
+  "aws_eip",
 ]
 
 # List of mandatory tags
