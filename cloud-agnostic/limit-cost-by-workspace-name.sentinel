@@ -17,6 +17,10 @@ limits = {
   "staging": decimal.new(5),
   "qa": decimal.new(500),
   "prod": decimal.new(1000),
+  "vpc": decimal.new(5),
+  "workload": decimal.new(100),
+  "db": decimal.new(100),
+  "data": decimal.new(100),
 }
 
 # Call the validation function
