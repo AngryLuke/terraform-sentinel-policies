@@ -3,8 +3,6 @@
 # It does not check providers in nested modules.
 
 import "tfconfig"
-import "tfplan"
-import "strings"
 
 # # Initialize array of regions found in AWS providers
 # region_values = []
@@ -49,8 +47,10 @@ import "strings"
 #   }
 # }
 
+tfconfig.providers
+
 main = rule {
   # (aws_region_valid) else true
-  (tfconfig.providers.aws.config.region is "eu-central-1" or 
-   tfconfig.providers.aws.config.region is "eu-west-3")
+  (tfconfig.providers.aws.config.region is "eu-central-1" and 
+   tfconfig.providers.aws.config.region is "eu-west-3") else false
 }
