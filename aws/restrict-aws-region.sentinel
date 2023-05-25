@@ -52,5 +52,5 @@ import "strings"
 main = rule {
   # (aws_region_valid) else true
   (tfconfig.providers.aws.config.region is "eu-central-1" or 
-   tfconfig.providers.aws.config.region is "eu-west-3") else false
+   tfconfig.providers.aws.config.region is "eu-west-3")
 }
