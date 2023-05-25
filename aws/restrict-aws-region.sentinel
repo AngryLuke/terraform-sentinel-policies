@@ -16,6 +16,7 @@ allowed_regions = ["eu-central-1", "eu-west-3",]
 # Iterate through all AWS providers in root module
 if ((length(tfconfig.providers) else 0) > 0) {
   providers = tfconfig.providers
+  print ( "providers content is: ", providers )
   if "aws" in keys(providers) {
     aws = tfconfig.providers.aws
     aliases = aws["alias"]
