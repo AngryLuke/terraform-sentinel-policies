@@ -12,7 +12,7 @@ region_values = []
 # Allowed Regions
 allowed_regions = [
   "eu-central-1",
-  "eu-west-3"
+  "eu-west-3",
 ]
 
 
