@@ -12,10 +12,10 @@ allowed_regions = ["eu-central-1","eu-west-3", "eu-west-2",]
 aws_region = tfplan.planned_values.outputs.aws_region.value
 
 
-if ((length(tfconfig.providers) else 0) > 0) {
-	print ( "aws_region is: ", aws_region )
-  print ( "allowed_regions is: ", allowed_regions )
-}
+
+print ( "aws_region is: ", aws_region )
+print ( "allowed_regions is: ", allowed_regions )
+
 
 main = rule {
   # aws_region in allowed_regions
