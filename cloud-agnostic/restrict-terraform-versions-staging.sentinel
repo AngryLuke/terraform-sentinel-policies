@@ -1,9 +1,13 @@
-#The policy uses the tfplan import to enforce the usage of Terraform version 1.1.0 (Dec 08, 2021) or higher
+# The policy uses the tfplan import to enforce the usage of Terraform version 1.5.0 
+# (Jun 12, 2023) or higher.
+# All the resources in the plan are checked for the version and if the version is lower than 1.5.0,
+# the policy returns a violation because we want to enforce the usage of new check blocks for 
+# validating infrastructure resources.
 
 import "tfplan/v2" as tfplan
 
 #Minimum allowed version variable
-min_allowed_version = "1.0.11"
+min_allowed_version = "1.5.0"
 violations = 0
 
 #Condition to check version
