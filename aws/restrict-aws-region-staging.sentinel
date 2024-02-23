@@ -1,19 +1,21 @@
 # This policy restricts the AWS region based on the region set for
 # instances of the AWS provider in the root module of the workspace.
 # It does not check providers in nested modules.
+# Check aws_region against a list of allowed regions.
+
 
 import "tfconfig/v2" as tfconfig
 
 allowed_regions = ["eu-central-1","eu-west-3", "eu-west-2",]
- 
-aws_providers = filter tfconfig.providers as _, provider {
-	provider.name is "aws"
+
+aws_region = tfconfig.variables.aws_region.default
+
+if ((length(tfconfig.providers) else 0) > 0) {
+	print ( "aws_region is: ", aws_region )
+  print ( "allowed_regions is: ", allowed_regions )
 }
- 
+
 main = rule {
-	all aws_providers as _, provider {
-		all provider.config.region as _, region {
-    	region in allowed_regions
-    }
-	}
+  # aws_region in allowed_regions
+  allowed_regions contains aws_region
 }
