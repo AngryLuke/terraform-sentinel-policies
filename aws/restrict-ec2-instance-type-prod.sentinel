@@ -1,5 +1,7 @@
 # This policy uses the Sentinel tfplan/v2 import to require that
 # all EC2 instances have instance types from an allowed list
+# Reference for production environment: t3.xlarge, t3.2xlarge, m5.xlarge,
+# m5.2xlarge, m6i.xlarge, m6i.2xlarge, m7i.xlarge, m7i.2xlarge
 
 # Import common-functions/tfplan-functions/tfplan-functions.sentinel
 # with alias "plan"
@@ -7,7 +9,7 @@ import "tfplan-functions" as plan
 
 # Allowed EC2 Instance Types
 # Include "null" to allow missing or computed values
-allowed_types = ["t3.large", "t3.xlarge", "t3.2xlarge"]
+allowed_types = ["t3.xlarge", "t3.2xlarge", "m5.xlarge", "m5.2xlarge", "m6i.xlarge", "m6i.2xlarge", "m7i.xlarge", "m7i.2xlarge"]
 
 # Get all EC2 instances
 allEC2Instances = plan.find_resources("aws_instance")
