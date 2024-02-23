@@ -4,11 +4,13 @@
 # Check aws_region against a list of allowed regions.
 
 
-import "tfconfig/v2" as tfconfig
+# import "tfconfig/v2" as tfconfig
+import "tfplan/v2" as tfplan
 
 allowed_regions = ["eu-central-1","eu-west-3", "eu-west-2",]
 
-aws_region = tfconfig.variables.aws_region.default
+aws_region = tfplan.planned_values.outputs.aws_region.value
+
 
 if ((length(tfconfig.providers) else 0) > 0) {
 	print ( "aws_region is: ", aws_region )
