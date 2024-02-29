@@ -14,7 +14,7 @@ limits = {
   "dev": decimal.new(5),
   "develop": decimal.new(5),
   "development": decimal.new(5),
-  "staging": decimal.new(20),
+  "staging": decimal.new(10),
   "qa": decimal.new(500),
   "prod": decimal.new(1000),
   "vpc": decimal.new(30),
